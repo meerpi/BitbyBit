@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="container">
             <h1>Aritra Mahanty</h1>
-            <p>Student|AI Enthusiast|Problem Solver</p>
+            <p>Student | AI Enthusiast | Problem Solver</p>
             <nav>
-                <a href="#about me">About</a>
+                <a href="#about">About</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
@@ -25,7 +23,7 @@
     <section id="about" class="section">
         <div class="container">
             <h2>About Me</h2>
-            <p>Hello! I'm <strong>Aritra Mahanty</strong>, a Student at VIT Bhopal University I am from west Bengal. I have always been passionate about computers and trying to understand how they work From a lower level. Currently I am studing Machine learning and the underlying maths behind it.</p>
+            <p>Hello! I'm <strong>Aritra Mahanty</strong>, a Student at VIT Bhopal University. I am from West Bengal. I have always been passionate about computers and trying to understand how they work from a lower level. Currently, I am studying Machine Learning and the underlying math behind it.</p>
         </div>
     </section>
 
@@ -48,34 +46,35 @@
             </div>
         </div>
     </section>
-    
 
     <section id="projects" class="section">
         <div class="container">
             <h2>Projects</h2>
             <div class="project-list">
                 <div class="project">
-                    <img src="{{ url_for('static', filename='images/fig1.png') }}" alt="Project 1">
+                  
+                    <img src="fig1.png" alt="Project 1">
                     <h3>TicTacToe</h3>
                     <p>Short description of the project. Include tools and technologies used.</p>
                     <a href="https://github.com/meerpi/tid-tac-toe-cs50" target="_blank">View on GitHub</a>
                 </div>
                 <div class="project">
-                    <img src="{{ url_for('static', filename='images/img2.jpg') }}" alt="Project 2">
-                    <h3>A Face recognision Model</h3>
-                    <p>A face recognision Application buils using Herrcascade Algorithm of Opencv to identify the face and then using LBPH to compare and match 2 different faces </p>
+                    <img src="img2.jpg" alt="Project 2">
+                    <h3>A Face Recognition Model</h3>
+                    <p>A face recognition application built using the Haar Cascade Algorithm of OpenCV to identify faces and then using LBPH to compare and match two different faces.</p>
                     <a href="https://github.com/meerpi/FaceRecognisation/tree/master" target="_blank">View on GitHub</a>
                 </div>
             </div>
         </div>
     </section>
-    <section id="contact me" class="section">
+
+    <section id="contact" class="section">
         <div class="container">
             <h2>Contact Me</h2>
             <p>If you'd like to contact me, feel free to reach out.</p>
             <form action="#" method="post">
                 <label for="Name">Name</label>
-                <input type="Text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required>
                 
                 <label for="Email">Email</label>
                 <input type="email" id="email" name="email" required>
@@ -83,7 +82,7 @@
                 <label for="Message">Message</label>
                 <textarea id="message" name="message" rows="4" required></textarea>
                 
-                <button type="Submit">Send Message</button>
+                <button type="submit">Send Message</button>
             </form>
         </div>
     </section>
@@ -94,61 +93,54 @@
             <p>
                 <a href="https://www.linkedin.com/in/aritra-mahanty-b6345a318/" target="_blank">LinkedIn</a> | 
                 <a href="https://github.com/meerpi" target="_blank">GitHub</a> | 
-                <a href="aritra.mahanty12@gmail.com">Email</a>
+                <a href="mailto:aritra.mahanty12@gmail.com">Email</a>
             </p>
         </div>
     </footer>
+
     <script>
-            // JavaScript
-            // Typing effect
-            const text = "Aritra Mahanty";
-            const typingText = document.getElementById("typing-text");
-            let index = 0;
+        // Typing effect
+        const text = "Aritra Mahanty";
+        const typingText = document.getElementById("typing-text");
+        let index = 0;
 
-            function typeEffect() 
-            {
-                if (index < text.length)
-                 {
-                    typingText.textContent += text.charAt(index);
-                    index++;
-                    setTimeout(typeEffect, 300);
-                } 
-                else 
-                {
-                    typingText.style.borderRight = "none";
-                }
+        function typeEffect() {
+            if (index < text.length) {
+                typingText.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 300);
+            } else {
+                typingText.style.borderRight = "none";
             }
+        }
 
-            window.onload = typeEffect;
+        window.onload = typeEffect;
 
-            // Navigation hover effect
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach((link) => {
-                link.addEventListener('mouseover', () => 
-                {
-                    link.style.color = '#FF5733';
-                    link.style.textDecoration = 'underline';
-                });
-                link.addEventListener('mouseout', () => 
-                {
-                    link.style.color = ''; 
-                    link.style.textDecoration = 'none';
-                });
+        // Navigation hover effect
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach((link) => {
+            link.addEventListener('mouseover', () => {
+                link.style.color = '#FF5733';
+                link.style.textDecoration = 'underline';
             });
-
-            // Project hover effect
-            const projects = document.querySelectorAll('.project');
-            projects.forEach((project) => {
-                project.addEventListener('mouseover', () => {
-                    project.style.transform = 'scale(1.05)';
-                    project.style.boxShadow = '0px 4px 15px rgba(0, 0, 0, 0.2)';
-                });
-                project.addEventListener('mouseout', () => {
-                    project.style.transform = 'scale(1)';
-                    project.style.boxShadow = 'none';
-                });
+            link.addEventListener('mouseout', () => {
+                link.style.color = ''; 
+                link.style.textDecoration = 'none';
             });
+        });
 
+        // Project hover effect
+        const projects = document.querySelectorAll('.project');
+        projects.forEach((project) => {
+            project.addEventListener('mouseover', () => {
+                project.style.transform = 'scale(1.05)';
+                project.style.boxShadow = '0px 4px 15px rgba(0, 0, 0, 0.2)';
+            });
+            project.addEventListener('mouseout', () => {
+                project.style.transform = 'scale(1)';
+                project.style.boxShadow = 'none';
+            });
+        });
     </script>
 </body>
 </html>
